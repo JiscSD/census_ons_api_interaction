@@ -1,6 +1,6 @@
 import logging
 from classes.filter_manager import FilterManager
-from functions.helpers import load_metadata_df, save_results_df
+from functions.filterhelpers import load_metadata_df, save_results_df
 
 def main():
     # Set up logging
