@@ -1,7 +1,7 @@
 from Functions.logger import  get_logger
 import logging
-from classes.metadata_fetcher import MetadataFetcher
-from functions.helpers import load_geography_df, save_metadata_df, delay_execution
+from classes.metadata_fecther import MetadataFetcher
+from functions.metadatahelpers import load_geography_df, save_metadata_df, delay_execution
 
 #Logging functionality
 # https://docs.python.org/3/howto/logging.html#a-simple-example
