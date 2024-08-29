@@ -1,6 +1,6 @@
 import logging
-from classes.download_manager import DownloadManager
-from functions.helpers import load_results_df, save_results_df
+from classes.download_manager import downloadmanager
+from functions.downloadmanager_helper import load_results_df, save_results_df
 
 def main():
     # Set up logging
