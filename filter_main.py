@@ -1,5 +1,5 @@
 import logging
-from classes.filter_manager import FilterManager
+from classes.filtermanager import FilterManager
 from functions.filterhelpers import load_metadata_df, save_results_df
 
 def main():
