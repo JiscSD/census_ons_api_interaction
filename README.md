@@ -5,11 +5,11 @@ Python script that retrieves data from the ONS API and download it for further p
 Python 3.x
 
 ## Python packages imported
-pip install logging
-pip install datetime
-import os
-pip install requests
-pip install pandas
+#### pip install logging
+#### pip install datetime
+#### import os
+#### pip install requests
+#### pip install pandas
 
 ## Project Setup
 
