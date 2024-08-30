@@ -1,11 +1,13 @@
 import requests
 import logging
 import pandas as pd
+from config.constants import FILTER_ENDPOINT, SUBMIT_ENDPOINT_TEMPLATE
+
 
 class FilterManager:
-    def __init__(self, filter_endpoint, submit_endpoint_template, delay=1):
-        self.filter_endpoint = filter_endpoint
-        self.submit_endpoint_template = submit_endpoint_template
+    def __init__(self, delay=1):
+        self.filter_endpoint = FILTER_ENDPOINT
+        self.submit_endpoint_template = SUBMIT_ENDPOINT_TEMPLATE
         self.delay = delay
         self.logger = logging.getLogger(__name__)
 
