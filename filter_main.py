@@ -1,6 +1,7 @@
 import logging
 from classes.filtermanager import FilterManager
 from functions.filterhelpers import load_metadata_df, save_results_df
+from config.constants import FILTER_ENDPOINT, SUBMIT_ENDPOINT_TEMPLATE
 
 def main():
     # Set up logging
@@ -12,8 +13,8 @@ def main():
 
     # Initialize FilterManager
     filter_manager = FilterManager(
-        filter_endpoint="https://api.beta.ons.gov.uk/v1/filters?submitted=true",
-        submit_endpoint_template="https://api.beta.ons.gov.uk/v1/filters/{filter_id}/submit",
+        filter_endpoint=FILTER_ENDPOINT,
+        submit_endpoint_template=SUBMIT_ENDPOINT_TEMPLATE,
         delay=1
     )
 
