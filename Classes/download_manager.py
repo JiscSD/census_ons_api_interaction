@@ -2,9 +2,11 @@ import os
 import requests
 import time
 import logging
+from config.constants import FILTER_OUTPUT_URL_TEMPLATE, DEFAULT_SAVE_DIRECTORY
+
 
 class DownloadManager:
-    def __init__(self, save_directory, delay=1):
+    def __init__(self, save_directory=DEFAULT_SAVE_DIRECTORY, delay=1):
         self.save_directory = save_directory
         self.delay = delay
         self.logger = logging.getLogger(__name__)
@@ -16,7 +18,7 @@ class DownloadManager:
             self.logger.info(f"Created directory: {self.save_directory}")
 
     def download_csv(self, table_code, geography_level, filter_output_id):
-        filter_output_url = f"https://api.beta.ons.gov.uk/v1/filter-outputs/{filter_output_id}"
+        filter_output_url = FILTER_OUTPUT_URL_TEMPLATE.format(filter_output_id=filter_output_id)
         response = requests.get(filter_output_url)
 
         if response.status_code == 200:
