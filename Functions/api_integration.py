@@ -24,11 +24,11 @@ def process_metadata(metadata_df):
             handle_filter_creation(payload, table_code, geography_level, results_df, row)
 
             # Optionally, delay between requests to avoid overwhelming the server
-            time.sleep(Config.SLEEP_INTERVAL)
+            time.sleep(Config.TIME_DELAY)
 
     return results_df
 
-def extract_metadata(row):
+def extract_metadatas(row):
     """Extract metadata from a DataFrame row."""
     table_code = row['table_code']
     edition = str(row['edition'])  # Ensure edition is treated as a string

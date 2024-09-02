@@ -2,7 +2,7 @@ from Functions.api_call import retrieve_metadata
 import pandas as pd
 
 # Assuming you have a DataFrame `geography_df` ready to use
-geography_df = pd.read_csv('Input/your_input_file.csv')  # Example loading of input
+geography_df = pd.read_csv('Input/geocomb.csv')  # Example loading of input
 
 # Call the function to retrieve metadata
 metadata_df = retrieve_metadata(geography_df)

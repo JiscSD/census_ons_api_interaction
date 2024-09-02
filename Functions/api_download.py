@@ -2,17 +2,17 @@ import os
 import requests
 import time
 import pandas as pd
-from Classes.constants import SAVE_DIRECTORY
+from Classes.constants import Config
 
 # Directory where files will be saved
-SAVE_DIRECTORY = SAVE_DIRECTORY
+SAVE_DIRECTORY = Config.SAVE_DIRECTORY
 
 def ensure_directory_exists(directory):
     """Ensure that the specified directory exists."""
     if not os.path.exists(directory):
         os.makedirs(directory)
 
-def process_filtermetadata(metadata_df):
+def process_filtermetadata(filteroutput_id):
     # Ensure the save directory exists
     ensure_directory_exists(SAVE_DIRECTORY)
 
@@ -20,7 +20,7 @@ def process_filtermetadata(metadata_df):
     download_links = []
 
     # Loop through each row in the DataFrame
-    for index, row in metadata_df.iterrows():
+    for index, row in filteroutput_id.iterrows():
         table_code = row['table_code']
         geography_level = row['geography_level']
         filter_output_id = row['filter_output_id']
@@ -40,10 +40,11 @@ def process_filtermetadata(metadata_df):
         time.sleep(3)
 
     # Add the download links to the original DataFrame
-    metadata_df['download_link'] = download_links
-
+    filteroutput_id['download_link'] = download_links
+    filteroutput_id_withlinks = filteroutput_id.copy()
+    
     # Return the updated DataFrame
-    return metadata_df
+    return filteroutput_id_withlinks
 
 def fetch_filter_output_details(filter_output_id):
     url = f"https://api.beta.ons.gov.uk/v1/filter-outputs/{filter_output_id}"
