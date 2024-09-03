@@ -1,4 +1,4 @@
-from Functions.api_call import retrieve_metadata
+from Functions.get_metadata import retrieve_metadata
 import pandas as pd
 
 # Assuming you have a DataFrame `geography_df` ready to use
