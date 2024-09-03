@@ -14,7 +14,7 @@ def ensure_directory_exists(directory):
 
 def process_filtermetadata(filteroutput_id):
     # Ensure the save directory exists
-    ensure_directory_exists(SAVE_DIRECTORY)
+    ensure_directory_exists(Config.SAVE_DIRECTORY)
 
     # Initialize a list to store the download links
     download_links = []
@@ -31,7 +31,7 @@ def process_filtermetadata(filteroutput_id):
         if filter_output_details and 'csv' in filter_output_details['downloads']:
             csv_url = filter_output_details['downloads']['csv']['public']
             filename = f"{table_code}_{geography_level}_data.csv"
-            download_path = download_csv(csv_url, SAVE_DIRECTORY, filename)
+            download_path = download_csv(csv_url, Config.SAVE_DIRECTORY, filename)
             download_links.append(download_path)
         else:
             download_links.append(None)
