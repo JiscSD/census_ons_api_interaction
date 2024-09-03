@@ -5,7 +5,7 @@ from Functions.api_download import process_filtermetadata
 
 def main():
     # Process 1: Retrieve metadata
-    #geography_df = pd.read_csv('Input/geocomb.csv')  # Load input DataFrame
+    geography_df = pd.read_csv('Input/geocomb.csv')  # Load input DataFrame
     metadata_df = retrieve_metadata(geography_df)    # Retrieve metadata
     metadata_df.to_csv('Output/metadata_output.csv', index=False)  # Save output
     print("Step 1: Metadata retrieved and saved to 'Output/metadata_output.csv'.")
