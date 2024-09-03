@@ -1,7 +1,7 @@
 import pandas as pd
-from Functions.api_call import retrieve_metadata
-from Functions.api_integration import process_metadata
-from Functions.api_download import process_filtermetadata
+from Functions.get_metadata import retrieve_metadata
+from Functions.get_filteroutid import process_metadata
+from Functions.download_csv import process_filtermetadata
 
 def main():
     # Process 1: Retrieve metadata
